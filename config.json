@@ -1,0 +1,10 @@
+{
+  "vocab_size": 20000,
+  "embed_dim": 128,
+  "hidden_dim": 256,
+  "num_layers": 2,
+  "num_classes": 4,
+  "dropout": 0.4,
+  "pad_idx": 0,
+  "max_len": 100
+}
