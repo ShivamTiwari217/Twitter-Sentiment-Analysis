@@ -27,10 +27,10 @@ def predict_sentiment(text):
     with torch.no_grad(): probs = F.softmax(model(ids),dim=-1)[0].cpu().tolist()
     return {CLASS_NAMES[i]: round(probs[i],4) for i in range(4)}
 
+# ✅ Fixed
 demo = gr.Interface(fn=predict_sentiment,
     inputs=gr.Textbox(label="Tweet", lines=3),
     outputs=gr.Label(num_top_classes=4),
-    title="Twitter Sentiment Analyser",
-    theme=gr.themes.Soft())
+    title="Twitter Sentiment Analyser")
 
-if __name__ == "__main__": demo.launch(server_name="0.0.0.0")
+if __name__ == "__main__": demo.launch(server_name="0.0.0.0", theme=gr.themes.Soft())
